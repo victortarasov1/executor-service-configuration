@@ -5,3 +5,11 @@ executorservice:
     webDriverExecutable: http://localhost:4444/wd/hub
     userAgent: desktop
 
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka/
