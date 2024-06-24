@@ -4,10 +4,10 @@ spring:
       definition: saveReport
     stream:
       bindings:
-        publisher-in-0:
+        saveReport-in-0:
           destination: report-sent
           group: ${spring.application.name}
-        publisher-out-0:
+        saveReport-out-0:
           destination: send-scenario
   datasource:
     url: jdbc:h2:mem:testDb
