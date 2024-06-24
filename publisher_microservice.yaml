@@ -4,10 +4,10 @@ spring:
       definition: execute
     stream:
       bindings:
-        execute-in-0:
+        publisher-in-0:
           destination: report-sent
           group: ${spring.application.name}
-        execute-out-0:
+        publisher-out-0:
           destination: send-scenario
   datasource:
     url: jdbc:h2:mem:testDb
