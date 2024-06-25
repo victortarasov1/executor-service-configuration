@@ -9,17 +9,26 @@ spring:
           group: ${spring.application.name}
         saveReport-out-0:
           destination: send-scenario
+#  datasource:
+#    url: jdbc:h2:mem:testDb
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password: ''
+#  h2.console.enabled: true
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate.ddl-auto: create
+#    show-sql: true
   datasource:
-    url: jdbc:h2:mem:testDb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ''
-  h2.console.enabled: true
-
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate.ddl-auto: create
-    show-sql: true
+    url: jdbc:mysql://localhost:3308/publisherdb
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    jpa:
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+      hibernate.ddl-auto: update
+      show-sql: true
 
   rabbitmq:
     host: localhost
