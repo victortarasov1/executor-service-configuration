@@ -10,13 +10,13 @@ spring:
         saveReport-out-0:
           destination: send-scenario
   datasource:
-    url: jdbc:mysql://localhost:3308/publisherdb
-    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/publisherdb
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
     jpa:
       database-platform: org.hibernate.dialect.MySQL8Dialect
-      hibernate.ddl-auto: update
+      hibernate.ddl-auto: create
       show-sql: true
 
   rabbitmq:
