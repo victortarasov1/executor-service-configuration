@@ -1,6 +1,6 @@
 executorservice:
   common:
-    driverWait: 3
+    driverWait: 30
     pageLoadTimeout: 30000
     webDriverExecutable: http://localhost:4444/wd/hub
     userAgent: desktop
