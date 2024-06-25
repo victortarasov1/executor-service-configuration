@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    function:
+      definition: saveReport
+    stream:
+      bindings:
+        saveReport-in-0:
+          destination: report-sent
+          group: ${spring.application.name}
+        saveReport-out-0:
+          destination: send-scenario
+  datasource:
+    url: jdbc:mysql://localhost:3308/publisherdb
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  h2.console.enabled: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: create
+    show-sql: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
