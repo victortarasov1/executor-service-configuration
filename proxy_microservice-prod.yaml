@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/proxydb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate.ddl-auto: create-drop
+    show-sql: true
+
+remote:
+  proxy:
+    source: https://freeapiproxies.azurewebsites.net/proxyapi
+    validator: http://httpbin.org/ip
