@@ -10,17 +10,15 @@ spring:
         saveReport-out-0:
           destination: send-scenario
   datasource:
-    url: jdbc:h2:mem:testDb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ''
-  h2.console.enabled: true
-
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate.ddl-auto: create
-    show-sql: true
-
+    url: jdbc:postgresql://localhost:5432/publisherdb
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password: root
+    jpa:
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        ddl-auto: create-drop
+        show-sql: true
 
   rabbitmq:
     host: localhost
