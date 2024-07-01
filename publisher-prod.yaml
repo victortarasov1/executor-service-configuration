@@ -14,11 +14,11 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: root
     password: root
-    jpa:
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
-      hibernate:
-        ddl-auto: create
-        show-sql: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+      show-sql: true
 
   rabbitmq:
     host: localhost
