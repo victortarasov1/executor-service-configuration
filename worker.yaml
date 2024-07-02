@@ -17,6 +17,9 @@ spring:
           group: ${spring.application.name}
         execute-out-0:
           destination: report-sent
+    openfeign:
+      circuitbreaker:
+        enabled: true
   rabbitmq:
     host: localhost
     port: 5672
@@ -24,3 +27,32 @@ spring:
     password: guest
     connection-timeout: 10s
 
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8085/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readiness-state.enabled: true
+    liveness-state.enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+
+server:
+  port: 8081

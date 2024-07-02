@@ -15,8 +15,13 @@ spring:
         execute-in-0:
           destination: send-scenario
           group: ${spring.application.name}
+          consumer:
+            concurrency: 3
         execute-out-0:
           destination: report-sent
+    openfeign:
+      circuitbreaker:
+        enabled: true
   rabbitmq:
     host: localhost
     port: 5672
