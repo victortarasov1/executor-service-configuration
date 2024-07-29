@@ -10,6 +10,13 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: "http://localhost:7080/realms/master/protocol/openid-connect/certs"
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
+      
 eureka:
   instance:
     prefer-ip-address: true
