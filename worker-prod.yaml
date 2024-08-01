@@ -19,15 +19,13 @@ spring:
             concurrency: 3
         execute-out-0:
           destination: report-sent
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
     openfeign:
       circuitbreaker:
         enabled: true
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    connection-timeout: 10s
 
 eureka:
   instance:
